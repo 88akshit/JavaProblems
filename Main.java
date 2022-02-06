@@ -1,24 +1,8 @@
 import java.util.*;
 
 class Main {
-  public static void main(String[] args) {
-    System.out.println("Hello world!");
-    
-    // List<Item> result = new ArrayList<>();
-    // Date d1 = new Date(2323223232L);
-    // Date d2 = new Date(2373233232L);
-    // Date d3 = new Date(4323293232L);
-    // Item i1 = new Item(1,d1);
-    // Item i2 = new Item(2,d2);
-    // Item i3 = new Item(3,d3);
-    // ProductQ pq = new ProductQ();
-    // pq.addItem(i3);
-    // pq.addItem(i1);
-    // pq.addItem(i2);
-    // Date d = new Date(4323293232L);
-    // result = pq.getTopItems(d);
-    // System.out.println(result);
 
+  public static void subArraySum(){
     //Find the Subarray with the given sum
     int [] nums = {10, 15 , -5 ,15, -10, 5};
     int sum = 5;
@@ -29,7 +13,7 @@ class Main {
 
     for (int i =0; i< nums.length;i++){
         currentSum+= nums[i];
-        if (currentSum-sum==0){
+        if (currentSum==sum){
             start = 0;
             end = i;
             break;
@@ -48,5 +32,82 @@ class Main {
     }else{
        System.out.println("Start "+start+" End "+end);
     }
+
+
+  }
+  
+  public static void palindrome(){
+    String word = "racecar";
+
+    int start = 0;
+    int end = word.length()-1;
+
+    while(start<end){
+      if(word.charAt(start)==word.charAt(end)){
+          start+=1;
+          end-=1;
+      }
+      else{
+        System.out.println("Not palindrome");
+        break;
+      }
+
+    }
+    System.out.println("Palindrome");
+  }
+
+  public static void removeDuplicates(){
+        int [] nums  = {1,1,1,2,2,3};
+        final int k = 2;
+
+    		//check if it is an empty array
+    		if(nums.length == 0) System.out.println(0);
+
+    		//start pointer of new array
+    		int m = 1;
+
+    		// count the time of duplicate numbers occurence
+    		int count = 1;
+
+    		for(int i = 1; i < nums.length; ++i) {
+                // compare current and previous element if the equal  and count of them is less than k shift and                
+                // increment m otherwise we dont increment m
+    			if(nums[i] == nums[i - 1]) {
+    				if(count < k) {
+              System.out.println("shifting "+m+" and "+i);
+    					nums[m++] = nums[i];
+    				}
+    				count++;
+    			} else {
+    				count = 1;
+            System.out.println("shifting not equal "+m+" and "+i);
+    				nums[m++] = nums[i];
+    			}
+          System.out.println(Arrays.toString(nums));
+    		}
+    		System.out.println(m);
+  }
+  public static void main(String[] args) {
+    System.out.println("Hello world!");
+    
+    // List<Item> result = new ArrayList<>();
+    // Date d1 = new Date(2323223232L);
+    // Date d2 = new Date(2373233232L);
+    // Date d3 = new Date(4323293232L);
+    // Item i1 = new Item(1,d1);
+    // Item i2 = new Item(2,d2);
+    // Item i3 = new Item(3,d3);
+    // ProductQ pq = new ProductQ();
+    // pq.addItem(i3);
+    // pq.addItem(i1);
+    // pq.addItem(i2);
+    // Date d = new Date(4323293232L);
+    // result = pq.getTopItems(d);
+    // System.out.println(result);
+
+    //Main.subArraySum();
+
+    // Main.palindrome();
+    Main.removeDuplicates();
   }
 }

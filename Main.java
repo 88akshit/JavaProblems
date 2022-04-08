@@ -1,5 +1,6 @@
 import java.util.*;
 
+
 class Main {
 
   public static void subArraySum(){
@@ -10,7 +11,7 @@ class Main {
     int end = -1;
     int currentSum = 0;
     Map<Integer,Integer> track = new HashMap<>();
-
+    // CurrentSum = sum+(currentsum-sum)
     for (int i =0; i< nums.length;i++){
         currentSum+= nums[i];
         if (currentSum==sum){
@@ -87,6 +88,7 @@ class Main {
     		}
     		System.out.println(m);
   }
+  
   public static void main(String[] args) {
     System.out.println("Hello world!");
     
@@ -105,9 +107,32 @@ class Main {
     // result = pq.getTopItems(d);
     // System.out.println(result);
 
-    //Main.subArraySum();
+    Main.subArraySum();
 
     // Main.palindrome();
-    Main.removeDuplicates();
+    //Main.removeDuplicates();
+
+    // Tree t2 = new Tree(7);
+
+    // t2.insertElement(4);
+    // t2.insertElement(9);
+    // t2.insertElement(1);
+    // t2.insertElement(6);
+    // t2.insertElement(8);
+    // t2.insertElement(10);
+    // t2.print();
+    // System.out.println(t2.find(10));
+
+    // List<Integer> random = new ArrayList<>();
+    // HashSet<Integer> random = new HashSet<>();
+    // random.add(3);
+    // random.add(2);
+    // if(random.contains(3)){
+    //   System.out.println("Found");
+    // }else{
+    //    System.out.println("not Found");
+    // }
+
+    Hotel h = new Hotel();
   }
 }
